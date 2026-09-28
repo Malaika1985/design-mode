@@ -1,0 +1,12 @@
+node_modules/
+npm-debug.log*
+*.tgz
+
+# Output of the tool itself - never commit these
+design-comments.md
+design-comments.done.md
+
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json

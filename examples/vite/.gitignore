@@ -1,0 +1,4 @@
+node_modules/
+package-lock.json
+design-comments.md
+design-comments.done.md

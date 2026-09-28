@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Node ${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['18.17', '20', '22']
+        os: [ubuntu-latest]
+        include:
+          - node: '22'
+            os: macos-latest
+          - node: '22'
+            os: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      # No install step: design-mode has zero runtime and dev dependencies.
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+  nuxt:
+    name: Nuxt integration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # The package itself has no dependencies; @nuxt/kit is installed only so
+      # test/nuxt.test.mjs stops skipping itself.
+      - name: Install Nuxt kit
+        run: npm install --no-save --no-audit --no-fund @nuxt/kit h3
+
+      - name: Test
+        run: npm test
+
+  package:
+    name: Package contents
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Pack and list what would be published
+        run: npm pack --dry-run
+
+      - name: Fail if the overlay would ship without its integrations
+        run: |
+          npm pack --dry-run --json > pack.json
+          node -e "
+            const files = JSON.parse(require('fs').readFileSync('pack.json','utf8'))[0].files.map(f => f.path);
+            const required = ['src/overlay.js','src/nuxt.mjs','src/vite.mjs','src/collector.mjs','bin/design-mode.mjs','commands/design.md','LICENSE'];
+            const missing = required.filter(f => !files.includes(f));
+            if (missing.length) { console.error('missing from package:', missing); process.exit(1); }
+            console.log('package contains all required files');
+          "
