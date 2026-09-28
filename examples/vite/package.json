@@ -1,0 +1,12 @@
+{
+  "name": "design-mode-example-vite",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "design-mode": "file:../..",
+    "vite": "^7.0.0"
+  }
+}

@@ -1,0 +1,8 @@
+version: 2
+updates:
+  # There are no npm dependencies to update - only the CI actions.
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: monthly
+    labels: ['chore']

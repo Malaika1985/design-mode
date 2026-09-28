@@ -1,0 +1,57 @@
+name: Bug report
+description: Something does not work the way the README says it should
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please do not use this form for security
+        problems - see [SECURITY.md](../blob/main/SECURITY.md) instead.
+
+  - type: dropdown
+    id: integration
+    attributes:
+      label: How are you running design-mode?
+      options:
+        - Nuxt module (design-mode/nuxt)
+        - Vite plugin (design-mode/vite)
+        - Standalone collector (npx design-mode collect)
+        - Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: design-mode, Node, and Nuxt/Vite version
+      placeholder: 'design-mode 0.1.0, Node 22.4.0, Nuxt 3.12.2'
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did you get instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Add the plugin to ...
+        2. Start the dev server
+        3. Click the palette button
+        4. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console output
+      description: Browser console and dev server output, if there is any.
+      render: shell
