@@ -31,7 +31,7 @@
     "./package.json": "./package.json"
   },
   "bin": {
-    "design-mode": "./bin/design-mode.mjs"
+    "design-mode": "bin/design-mode.mjs"
   },
   "files": [
     "bin",
