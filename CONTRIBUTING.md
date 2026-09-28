@@ -22,10 +22,10 @@ Node 18.17 or newer. Tests use the built-in `node:test` runner, lint is
 
 ```sh
 cd design-mode && npm link
-cd ../your-app && npm link design-mode
+cd ../your-app && npm link @mailaika1985/design-mode
 ```
 
-Then add `design-mode/nuxt` or `design-mode/vite` to that app's config and
+Then add `@mailaika1985/design-mode/nuxt` or `@mailaika1985/design-mode/vite` to that app's config and
 restart its dev server.
 
 ## Ground rules for changes

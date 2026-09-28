@@ -6,7 +6,7 @@
     "dev": "vite"
   },
   "devDependencies": {
-    "design-mode": "file:../..",
+    "@mailaika1985/design-mode": "file:../..",
     "vite": "^7.0.0"
   }
 }
