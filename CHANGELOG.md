@@ -9,13 +9,13 @@ All notable changes to this project are documented here. The format follows
 ## [0.1.0] - 2026-09-28
 
 First public release. Previously an internal copy-the-folder package, now an
-installable one. Published under the `@mailaika1985` scope: npm rejects the
+installable one. Published under the `@malaika1985` scope: npm rejects the
 unscoped name as too similar to an existing package.
 
 ### Added
 
-- npm package with subpath exports: `@mailaika1985/design-mode/nuxt`, `@mailaika1985/design-mode/vite`,
-  `@mailaika1985/design-mode/overlay.js` and a programmatic entry point.
+- npm package with subpath exports: `@malaika1985/design-mode/nuxt`, `@malaika1985/design-mode/vite`,
+  `@malaika1985/design-mode/overlay.js` and a programmatic entry point.
 - `design-mode` CLI with `collect` (standalone receiver) and
   `install-command` (installs the `/design` slash command globally or into a
   project).

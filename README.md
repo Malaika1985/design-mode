@@ -1,8 +1,8 @@
 # design-mode
 
 [![CI](https://github.com/Malaika1985/design-mode/actions/workflows/ci.yml/badge.svg)](https://github.com/Malaika1985/design-mode/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@mailaika1985/design-mode.svg)](https://www.npmjs.com/package/@mailaika1985/design-mode)
-[![license](https://img.shields.io/npm/l/@mailaika1985/design-mode.svg)](./LICENSE)
+[![npm](https://img.shields.io/npm/v/@malaika1985/design-mode.svg)](https://www.npmjs.com/package/@malaika1985/design-mode)
+[![license](https://img.shields.io/npm/l/@malaika1985/design-mode.svg)](./LICENSE)
 
 **Click a UI element in your dev server, write what should change, let your
 coding agent do it.**
@@ -58,7 +58,7 @@ Every click + comment appends one entry to `design-comments.md`:
 ## Install
 
 ```sh
-npm i -D @mailaika1985/design-mode
+npm i -D @malaika1985/design-mode
 ```
 
 The package is scoped because npm blocks the unscoped name as too similar to
@@ -71,7 +71,7 @@ Then wire it into your dev server - one line.
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: ['@mailaika1985/design-mode/nuxt'],
+  modules: ['@malaika1985/design-mode/nuxt'],
   designMode: { lang: 'de' }, // optional
 })
 ```
@@ -80,7 +80,7 @@ export default defineNuxtConfig({
 
 ```js
 // vite.config.js
-import designMode from '@mailaika1985/design-mode/vite'
+import designMode from '@malaika1985/design-mode/vite'
 
 export default defineConfig({
   plugins: [vue(), designMode()],
@@ -92,7 +92,7 @@ export default defineConfig({
 Run the standalone collector next to it and add one script tag:
 
 ```sh
-npx @mailaika1985/design-mode collect
+npx @malaika1985/design-mode collect
 ```
 
 ```html
@@ -121,9 +121,9 @@ design-mode ships the slash command that reads the file and implements the
 comments. Install it once, globally:
 
 ```sh
-npx @mailaika1985/design-mode install-command          # ~/.claude/commands/design.md
-npx @mailaika1985/design-mode install-command --lang de
-npx @mailaika1985/design-mode install-command --project  # ./.claude/commands/design.md
+npx @malaika1985/design-mode install-command          # ~/.claude/commands/design.md
+npx @malaika1985/design-mode install-command --lang de
+npx @malaika1985/design-mode install-command --project  # ./.claude/commands/design.md
 ```
 
 From then on `/design` is available in every project.

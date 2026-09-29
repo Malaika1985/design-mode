@@ -1,5 +1,5 @@
 {
-  "name": "@mailaika1985/design-mode",
+  "name": "@malaika1985/design-mode",
   "version": "0.1.0",
   "description": "Click a UI element in your dev server, leave a comment, let your coding agent implement it. Nuxt module, Vite plugin and standalone collector.",
   "keywords": [

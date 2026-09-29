@@ -4,13 +4,13 @@ A full Nuxt app is too heavy to keep in this repository, so here is the wiring
 instead. Drop it into any existing Nuxt 3 or 4 project.
 
 ```sh
-npm i -D @mailaika1985/design-mode
+npm i -D @malaika1985/design-mode
 ```
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: ['@mailaika1985/design-mode/nuxt'],
+  modules: ['@malaika1985/design-mode/nuxt'],
 
   // all optional
   designMode: {
@@ -34,5 +34,5 @@ To develop against a local checkout of design-mode:
 
 ```sh
 cd /path/to/design-mode && npm link
-cd /path/to/your-nuxt-app && npm link @mailaika1985/design-mode
+cd /path/to/your-nuxt-app && npm link @malaika1985/design-mode
 ```
